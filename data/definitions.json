@@ -1,0 +1,212 @@
+[
+  {
+    "id": "1757cf00-b504-49b7-8d96-6f4ee67dab83",
+    "name": "Order Processing",
+    "states": [
+      {
+        "id": "pending",
+        "name": "Pending",
+        "isInitial": true,
+        "isFinal": false,
+        "enabled": true,
+        "description": "Order received and pending"
+      },
+      {
+        "id": "processing",
+        "name": "Processing",
+        "isInitial": false,
+        "isFinal": false,
+        "enabled": true,
+        "description": "Order being processed"
+      },
+      {
+        "id": "completed",
+        "name": "Completed",
+        "isInitial": false,
+        "isFinal": true,
+        "enabled": true,
+        "description": "Order completed"
+      },
+      {
+        "id": "cancelled",
+        "name": "Cancelled",
+        "isInitial": false,
+        "isFinal": true,
+        "enabled": true,
+        "description": "Order cancelled"
+      }
+    ],
+    "actions": [
+      {
+        "id": "start_processing",
+        "name": "Start Processing",
+        "enabled": true,
+        "fromStates": [
+          "pending"
+        ],
+        "toState": "processing",
+        "description": "Begin order processing"
+      },
+      {
+        "id": "complete_order",
+        "name": "Complete Order",
+        "enabled": true,
+        "fromStates": [
+          "processing"
+        ],
+        "toState": "completed",
+        "description": "Mark order as completed"
+      },
+      {
+        "id": "cancel_order",
+        "name": "Cancel Order",
+        "enabled": true,
+        "fromStates": [
+          "pending",
+          "processing"
+        ],
+        "toState": "cancelled",
+        "description": "Cancel the order"
+      }
+    ],
+    "createdAt": "2025-07-17T20:35:20.0829984Z",
+    "description": "Simple order processing workflow"
+  },
+  {
+    "id": "14cea4b4-95a4-4061-91bc-c7ac95cf1907",
+    "name": "Workflow with Disabled Action",
+    "states": [
+      {
+        "id": "start",
+        "name": "Start",
+        "isInitial": true,
+        "isFinal": false,
+        "enabled": true,
+        "description": null
+      },
+      {
+        "id": "end",
+        "name": "End",
+        "isInitial": false,
+        "isFinal": true,
+        "enabled": true,
+        "description": null
+      }
+    ],
+    "actions": [
+      {
+        "id": "disabled_action",
+        "name": "Disabled Action",
+        "enabled": false,
+        "fromStates": [
+          "start"
+        ],
+        "toState": "end",
+        "description": null
+      }
+    ],
+    "createdAt": "2025-07-17T20:35:21.2910646Z",
+    "description": null
+  },
+  {
+    "id": "202aca52-a83d-4a0b-b734-8ecd7fd4be58",
+    "name": "Complex Approval Workflow",
+    "states": [
+      {
+        "id": "draft",
+        "name": "Draft",
+        "isInitial": true,
+        "isFinal": false,
+        "enabled": true,
+        "description": null
+      },
+      {
+        "id": "review",
+        "name": "Under Review",
+        "isInitial": false,
+        "isFinal": false,
+        "enabled": true,
+        "description": null
+      },
+      {
+        "id": "approved",
+        "name": "Approved",
+        "isInitial": false,
+        "isFinal": true,
+        "enabled": true,
+        "description": null
+      },
+      {
+        "id": "rejected",
+        "name": "Rejected",
+        "isInitial": false,
+        "isFinal": false,
+        "enabled": true,
+        "description": null
+      },
+      {
+        "id": "archived",
+        "name": "Archived",
+        "isInitial": false,
+        "isFinal": true,
+        "enabled": true,
+        "description": null
+      }
+    ],
+    "actions": [
+      {
+        "id": "submit_for_review",
+        "name": "Submit for Review",
+        "enabled": true,
+        "fromStates": [
+          "draft"
+        ],
+        "toState": "review",
+        "description": null
+      },
+      {
+        "id": "approve",
+        "name": "Approve",
+        "enabled": true,
+        "fromStates": [
+          "review"
+        ],
+        "toState": "approved",
+        "description": null
+      },
+      {
+        "id": "reject",
+        "name": "Reject",
+        "enabled": true,
+        "fromStates": [
+          "review"
+        ],
+        "toState": "rejected",
+        "description": null
+      },
+      {
+        "id": "revise",
+        "name": "Revise",
+        "enabled": true,
+        "fromStates": [
+          "rejected"
+        ],
+        "toState": "draft",
+        "description": null
+      },
+      {
+        "id": "archive",
+        "name": "Archive",
+        "enabled": true,
+        "fromStates": [
+          "rejected",
+          "approved"
+        ],
+        "toState": "archived",
+        "description": null
+      }
+    ],
+    "createdAt": "2025-07-17T20:35:21.3744039Z",
+    "description": null
+  }
+]

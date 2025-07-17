@@ -1,0 +1,98 @@
+[
+  {
+    "id": "03d025eb-476a-4367-9056-8621d872e3b1",
+    "definitionId": "1757cf00-b504-49b7-8d96-6f4ee67dab83",
+    "currentStateId": "completed",
+    "history": [
+      {
+        "actionId": "start_processing",
+        "fromStateId": "pending",
+        "toStateId": "processing",
+        "executedAt": "2025-07-17T20:35:20.9358088Z"
+      },
+      {
+        "actionId": "complete_order",
+        "fromStateId": "processing",
+        "toStateId": "completed",
+        "executedAt": "2025-07-17T20:35:21.0295618Z"
+      }
+    ],
+    "startedAt": "2025-07-17T20:35:20.6558668Z",
+    "completedAt": "2025-07-17T20:35:21.0295635Z",
+    "isCompleted": true
+  },
+  {
+    "id": "10bab667-7106-49bc-8fe8-14ef4ed574de",
+    "definitionId": "1757cf00-b504-49b7-8d96-6f4ee67dab83",
+    "currentStateId": "cancelled",
+    "history": [
+      {
+        "actionId": "cancel_order",
+        "fromStateId": "pending",
+        "toStateId": "cancelled",
+        "executedAt": "2025-07-17T20:35:21.0623119Z"
+      }
+    ],
+    "startedAt": "2025-07-17T20:35:20.7132491Z",
+    "completedAt": "2025-07-17T20:35:21.0623138Z",
+    "isCompleted": true
+  },
+  {
+    "id": "e4dc8485-6169-4386-955b-44f6acba0551",
+    "definitionId": "1757cf00-b504-49b7-8d96-6f4ee67dab83",
+    "currentStateId": "pending",
+    "history": [],
+    "startedAt": "2025-07-17T20:35:21.174236Z",
+    "completedAt": null,
+    "isCompleted": false
+  },
+  {
+    "id": "1fa1641c-7137-4d58-ac49-2829402f21aa",
+    "definitionId": "14cea4b4-95a4-4061-91bc-c7ac95cf1907",
+    "currentStateId": "start",
+    "history": [],
+    "startedAt": "2025-07-17T20:35:21.3200604Z",
+    "completedAt": null,
+    "isCompleted": false
+  },
+  {
+    "id": "0d8f31c4-142c-48bd-81a0-eb9df250008a",
+    "definitionId": "202aca52-a83d-4a0b-b734-8ecd7fd4be58",
+    "currentStateId": "approved",
+    "history": [
+      {
+        "actionId": "submit_for_review",
+        "fromStateId": "draft",
+        "toStateId": "review",
+        "executedAt": "2025-07-17T20:35:21.4365515Z"
+      },
+      {
+        "actionId": "reject",
+        "fromStateId": "review",
+        "toStateId": "rejected",
+        "executedAt": "2025-07-17T20:35:21.4704385Z"
+      },
+      {
+        "actionId": "revise",
+        "fromStateId": "rejected",
+        "toStateId": "draft",
+        "executedAt": "2025-07-17T20:35:21.4995426Z"
+      },
+      {
+        "actionId": "submit_for_review",
+        "fromStateId": "draft",
+        "toStateId": "review",
+        "executedAt": "2025-07-17T20:35:21.5279325Z"
+      },
+      {
+        "actionId": "approve",
+        "fromStateId": "review",
+        "toStateId": "approved",
+        "executedAt": "2025-07-17T20:35:21.5557132Z"
+      }
+    ],
+    "startedAt": "2025-07-17T20:35:21.4067567Z",
+    "completedAt": "2025-07-17T20:35:21.5557213Z",
+    "isCompleted": true
+  }
+]
